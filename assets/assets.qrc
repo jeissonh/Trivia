@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/common">
+        <file>new.svg</file>
+        <file>exit.svg</file>
+    </qresource>
+</RCC>
