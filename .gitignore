@@ -27,5 +27,6 @@
 *.out
 *.app
 
+# Project specific
 *.user*
-
+doc/

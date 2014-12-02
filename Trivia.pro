@@ -1,23 +1,12 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2014-11-28T13:13:47
-#
-#-------------------------------------------------
-
-QT       += core gui
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
+QT += core gui widgets
 TARGET = Trivia
 TEMPLATE = app
 
+SOURCES += main.cpp
+SOURCES += MainWindow.cpp
 
-SOURCES += main.cpp\
-        MainWindow.cpp
+HEADERS += MainWindow.h
 
-HEADERS  += MainWindow.h
+FORMS += MainWindow.ui
 
-FORMS    += MainWindow.ui
-
-RESOURCES += \
-    assets/assets.qrc
+RESOURCES += assets/assets.qrc
