@@ -4,16 +4,14 @@ Question::Question()
 {
 }
 
-std::istream& Question::load(std::istream& in, bool removeEmptyLine)
+QTextStream& Question::load(QTextStream& in, bool removeEmptyLine)
 {
-	std::getline(in, text);
-	std::getline(in, answer);
+	text = in.readLine();
+	answer = in.readLine();
 
 	// Ignore the empty line
 	if ( removeEmptyLine )
-	{
-		std::string dummy;
-		return std::getline(in, dummy);
-	}
+		in.readLine();
+
 	return in;
 }

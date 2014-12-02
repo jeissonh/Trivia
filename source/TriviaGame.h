@@ -1,25 +1,31 @@
 #ifndef TRIVIAGAME_H
 #define TRIVIAGAME_H
 
-#include "Question.h"
-#include <vector>
+#include <QApplication>
+#include <QVector>
 
-class TriviaGame
+// Forward declarations
+class MainWindow;
+class Question;
+
+class TriviaGame : public QApplication
 {
-  private:
-	std::vector<Question*> questions;
+  protected:
+	MainWindow* mainWindow;
+	QVector<Question*> questions;
+	bool validArguments;
 
   public:
-	TriviaGame();
-	~TriviaGame();
-	int run(int argc, char* argv[]);
+	TriviaGame(int& argc, char* argv[]);
+	virtual ~TriviaGame();
+	int run();
 
   private:
 	bool loadQuestions();
 	bool analyzeArguments(int argc, char* argv[]);
 	int play();
 	void printQuestions() const;
-	Question*createQuestion(const std::string& type);
+	static Question* createQuestion(const QString& type);
 };
 
 #endif // TRIVIAGAME_H

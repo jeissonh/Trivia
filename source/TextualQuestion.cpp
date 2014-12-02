@@ -6,19 +6,17 @@ TextualQuestion::TextualQuestion()
 
 bool TextualQuestion::ask()
 {
-	std::cout << text << std::endl;
-	std::cout << "Your answer: ";
-	std::string playerAnswer;
-	std::getline(std::cin, playerAnswer);
+	QTextStream cin(stdin), cout(stdout);
+	cout << text << endl;
+	cout << "Your answer: ";
 
-	std::string rightAnswer = this->answer;
-	std::transform(rightAnswer.begin(), rightAnswer.end(), rightAnswer.begin(), ::tolower);
-	std::transform(playerAnswer.begin(), playerAnswer.end(), playerAnswer.begin(), ::tolower);
+	const QString& playerAnswer = cin.readLine().toLower();
+	const QString& rightAnswer = this->answer.toLower();
 
 	bool correct = playerAnswer == rightAnswer;
 	if ( correct )
-		std::cout << "Correct!\n";
+		cout << "Correct!\n";
 	else
-		std::cout << "The right answer is: " << answer << std::endl;
+		cout << "The right answer is: " << answer << endl;
 	return correct;
 }

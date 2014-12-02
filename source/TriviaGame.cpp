@@ -1,19 +1,27 @@
+#include "MainWindow.h"
+#include "Question.h"
 #include "TriviaGame.h"
-#include <fstream>
+#include <QDebug>
+#include <QFile>
+#include <QTextStream>
 
-TriviaGame::TriviaGame()
+TriviaGame::TriviaGame(int& argc, char* argv[])
+	: QApplication(argc, argv)
+	, mainWindow(nullptr)
+	, validArguments(analyzeArguments(argc, argv))
 {
 }
 
 TriviaGame::~TriviaGame()
 {
-	for ( size_t i = 0; i < questions.size(); ++i )
+	delete mainWindow;
+	for ( int i = 0; i < questions.size(); ++i )
 		delete questions[i];
 }
 
-int TriviaGame::run(int argc, char* argv[])
+int TriviaGame::run()
 {
-	if ( ! analyzeArguments(argc, argv) )
+	if ( ! validArguments )
 		return 1;
 
 	if ( loadQuestions() )
@@ -24,34 +32,42 @@ int TriviaGame::run(int argc, char* argv[])
 
 bool TriviaGame::loadQuestions()
 {
-	const char* const sourceFilename = "trivia3.txt";
-	std::ifstream source(sourceFilename);
-	if ( ! source )
+	// Open trivia3.txt located in assets.qrc
+	const QString sourceFilename(":/questions/trivia3.txt");
+	QFile file(sourceFilename);
+	if ( ! file.open(QIODevice::ReadOnly | QIODevice::Text) )
 	{
-		std::cerr << "trivia: could not open " << sourceFilename;
-		return 1;
+		qDebug() << "trivia: could not open " << sourceFilename;
+		return false;
 	}
 
-	std::string type;
-	while ( std::getline(source, type) )
+	// We can read lines from QFile directly, but QTextStream takes care of Unicode
+	QTextStream source(&file);
+	while ( ! source.atEnd() )
 	{
+		QString type = source.readLine();
 		Question* question = createQuestion(type);
 		if ( ! question ) return false;
 		source >> *question;
 		questions.push_back( question );
 	}
 
-	source.close();
+	file.close();
+	printQuestions();
 	return true;
 }
 
-bool TriviaGame::analyzeArguments(int argc, char* argv[])
+bool TriviaGame::analyzeArguments(int /*argc*/, char* /*argv*/[])
 {
 	return true;
 }
 
 int TriviaGame::play()
 {
+	Q_ASSERT(mainWindow == nullptr);
+	mainWindow = new MainWindow();
+	mainWindow->show();
+#if 0
 	std::srand( std::time(nullptr) );
 	size_t questionNumber = 0;
 	while ( std::cin )
@@ -60,20 +76,22 @@ int TriviaGame::play()
 		size_t index = rand() % questions.size();
 		questions[index]->ask();
 	}
-	return 0;
+#endif
+	return exec();
 }
 
 void TriviaGame::printQuestions() const
 {
-	for ( size_t i = 0; i < questions.size(); ++i )
-		std::cout << questions[i] << std::endl;
+	QTextStream cout(stdout);
+	for ( int i = 0; i < questions.size(); ++i )
+		cout << *questions[i] << endl;
 }
 
 
 #include "NumericQuestion.h"
 #include "TextualQuestion.h"
 #include "SingleChoiceQuestion.h"
-Question* TriviaGame::createQuestion(const std::string& type)
+Question* TriviaGame::createQuestion(const QString& type)
 {
 	if ( type == "numeric") return new NumericQuestion();
 	if ( type == "textual") return new TextualQuestion();

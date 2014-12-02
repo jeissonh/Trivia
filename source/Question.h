@@ -1,25 +1,24 @@
 #ifndef QUESTION_H
 #define QUESTION_H
 
-#include <iostream>
-#include <string>
+#include <QTextStream>
 
 class Question
 {
   protected:
-	std::string text;
-	std::string answer;
+	QString text;
+	QString answer;
 
   public:
 	Question();
 	virtual ~Question() {}
-	friend inline std::istream& operator>>(std::istream& in, Question& question) { return question.load(in); }
-	virtual std::istream& load(std::istream& in, bool removeEmptyLine = true);
+	friend inline QTextStream& operator>>(QTextStream& in, Question& question) { return question.load(in); }
+	virtual QTextStream& load(QTextStream& in, bool removeEmptyLine = true);
 
-	friend inline std::ostream& operator<<(std::ostream& out, const Question& question)
+	friend inline QTextStream& operator<<(QTextStream& out, const Question& question)
 	{
-		out << '[' << question.text << ']' << std::endl;
-		return out << '{' << question.answer << '}' << std::endl;
+		out << '[' << question.text << ']' << endl;
+		return out << '{' << question.answer << '}' << endl;
 	}
 
 	/// @return true if player gets the right answer

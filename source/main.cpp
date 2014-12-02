@@ -1,11 +1,8 @@
 #include "MainWindow.h"
-#include <QApplication>
+#include "TriviaGame.h"
 
 int main(int argc, char *argv[])
 {
-	QApplication app(argc, argv);
-	MainWindow mainWindow;
-	mainWindow.show();
-
-	return app.exec();
+	TriviaGame game(argc, argv);
+	return game.run();
 }

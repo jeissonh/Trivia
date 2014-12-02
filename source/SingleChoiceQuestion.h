@@ -2,16 +2,16 @@
 #define SINGLECHOICEQUESTION_H
 
 #include "Question.h"
-#include <vector>
+#include <QVector>
 
 class SingleChoiceQuestion : public Question
 {
   protected:
-	std::vector<std::string> choices;
+	QVector<QString> choices;
 
   public:
 	SingleChoiceQuestion();
-	virtual std::istream& load(std::istream& in, bool removeEmptyLine = true) override;
+	virtual QTextStream& load(QTextStream& in, bool removeEmptyLine = true) override;
 	/// @return true if player gets the right answer
 	virtual bool ask() override;
 };

@@ -3,4 +3,7 @@
         <file>new.svg</file>
         <file>exit.svg</file>
     </qresource>
+    <qresource prefix="/questions">
+        <file>trivia3.txt</file>
+    </qresource>
 </RCC>

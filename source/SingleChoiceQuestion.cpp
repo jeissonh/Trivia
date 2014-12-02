@@ -4,34 +4,34 @@ SingleChoiceQuestion::SingleChoiceQuestion()
 {
 }
 
-std::istream& SingleChoiceQuestion::load(std::istream& in, bool)
+QTextStream& SingleChoiceQuestion::load(QTextStream& in, bool)
 {
 	Question::load(in, false);
-	std::string choice;
-	while ( std::getline(in, choice) && choice.length() > 0 )
+	while ( ! in.atEnd() )
+	{
+		QString choice = in.readLine();
+		if ( choice.length() == 0 ) break;
 		choices.push_back(choice);
+	}
 
 	return in;
 }
 
 bool SingleChoiceQuestion::ask()
 {
-	std::cout << text << std::endl;
-	for (size_t i = 0; i < choices.size(); ++i)
-		std::cout << i + 1 << ". " << choices[i] << std::endl;
-	std::cout << "Your answer: ";
+	QTextStream cin(stdin), cout(stdout);
+	cout << text << endl;
+	for (int i = 0; i < choices.size(); ++i)
+		cout << i + 1 << ". " << choices[i] << endl;
+	cout << "Your answer: ";
 
-	size_t playerAnswer;
-	std::cin >> playerAnswer;
-	size_t rightAnswer = ::strtoull(this->answer.c_str(), nullptr, 10);
-	// remove the enter character
-	std::string dummy;
-	std::getline( std::cin, dummy );
+	int playerAnswer = cin.readLine().toInt();
+	int rightAnswer = answer.toInt();
 
 	bool correct = playerAnswer == rightAnswer;
 	if ( correct )
-		std::cout << "Correct!\n";
+		cout << "Correct!\n";
 	else
-		std::cout << "The right answer is: " << answer << std::endl;
+		cout << "The right answer is: " << answer << endl;
 	return correct;
 }
