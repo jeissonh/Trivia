@@ -1,12 +1,14 @@
-QT += core gui widgets
 TARGET = Trivia
 TEMPLATE = app
+QT += core gui widgets
 
-SOURCES += main.cpp
-SOURCES += MainWindow.cpp
+INCLUDEPATH += source
 
-HEADERS += MainWindow.h
+SOURCES += source/main.cpp
+SOURCES += source/MainWindow.cpp
 
-FORMS += MainWindow.ui
+HEADERS += source/MainWindow.h
+
+FORMS += source/MainWindow.ui
 
 RESOURCES += assets/assets.qrc
