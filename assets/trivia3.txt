@@ -1,0 +1,212 @@
+numeric
+Cuántos metros hay en un kilómetro?
+1000
+
+single_choice
+Quién tiene 4 estómagos?
+2
+Una gallina
+Una vaca
+El Botija
+Una máquina tragamonedas
+
+single_choice
+Cuántos pies tiene un ciempiés?
+4
+100
+74
+104
+Ninguna de las anteriores
+
+numeric
+¿A cuántos metros cuadrados equivale una hectárea?
+10000
+
+textual
+Si a < b, y b < 0, entonces el valor de a es?
+negativo
+
+single_choice
+¿Cómo se llama la supercomputadora que controla el Discovery 1 en "2001: Odisea del Espacio"?
+2
+TMA-1
+HAL 9000
+ENIAC
+HANGAR 68
+
+single_choice
+¿El nombre de la sustancia "Nicotina" proviene de:?
+1
+Jean Nicot que introdujo la planta del tabaco en Francia
+De sus componentes: nitrógeno e hidrógeno, y su efecto insecticida
+De su descubridor: Francesco Nicota
+
+numeric
+¿Cuántos lados tiene un triángulo rectángulo?
+3
+
+single_choice
+¿Cuál es considerado el animal más venenoso del mundo?
+4
+La serpiente marina
+El alacrán
+El sapo dorado
+La avispa marina
+
+single_choice
+¿La fuerza de gravitación es inversamente proporcional a:?
+3
+la masa
+el peso
+la distancia
+la constante de gravitación
+
+single_choice
+¿Por qué los teclados no están en orden alfabético?
+2
+Porque el inventor es de apellido Qwerty
+Para evitar que los mazos de la máquina de escribir chocaran
+Para competir con Dvorak
+El proyecto que creó la máquina de escribir se denominaba Qwerty
+
+single_choice
+¿De dónde proviene el aguacate?
+4
+China
+India
+Australia
+América Central
+
+single_choice
+¿Cuál de las siguientes afirmaciones es válida?
+1
+La avispa es más delgada que la abeja y no pierde el aguijón al picar, la abeja sí
+La abeja es más delgada que la avispa y no pierde el aguijón al picar, la avispa sí
+La abeja es un insecto, la avispa es un arácnido
+Ninguna de las anteriores
+
+single_choice
+Antes de ser cantante, Julio Iglesias era portero de:
+2
+Barcelona
+Real Madrid
+Celta de Vigo
+Saprissa
+
+textual
+¿Cuál país actualmente es el mayor exportador mundial de piña?
+Costa Rica
+
+single_choice
+¿Cuál de los siguientes alimentos NO es un veneno para la babosa?
+1
+Hojas putrefactas
+La cerveza
+La sal
+Compuestos de metaldehido
+
+single_choice
+La población de la India y China juntas representa
+3
+tres cuartas partes de la población mundial
+la mitad de la población mundial
+un tercio de la población mundial
+un cuarto de la población mundial
+
+single_choice
+El tejido que hace a los ojos del gato y otros animales reflejar la luz se llama
+2
+Tejido fotoreflector
+Tapete de luz
+Captaluces
+Halógenos
+
+textual
+Después del Sol, la estrella más cercana a la Tierra está en la Constelación de:
+Alfa Centauro
+
+single_choice
+A partir de este invento de 1877 se pudo en la humanidad grabar y reproducir sonido con éxito:
+1
+El Fonógrafo de Thomas Alva Edison
+El Gramófono de Emile Berliner
+El casete de Fritz Pfleumer
+La Victrola de RCA
+
+single_choice
+La Esvástica es un símbolo inventado por
+3
+Los Nazis
+Los Vikingos
+Los Hindúes
+Los Egipcios
+
+textual
+Según la leyenda, Tío Sam, la personificación nacional de Estados Unidos, fue de profesión un
+carnicero
+
+single_choice
+"Watson, ven aquí" es una frase célebre asociada al siguiente hecho
+3
+Descubrimiento del ADN
+Aparición de Sherlock Holmes en la radio
+Invención del teléfono
+Película "Casa Blanca"
+
+single_choice
+¿Cuál de los siguientes campos NO es premiado con un Nobel?
+3
+Física
+Química
+Biología
+Economía
+
+textual
+¿Cuál es el país que ha ganado más certámenes de Miss Universo?
+Estados Unidos | USA | EEUU
+
+textual
+La primera copa mundial de futbol en 1930 tuvo sede en este país:
+Uruguay
+
+single_choice
+El máximo goleador en la historia del fútbol con 1329 goles es
+1
+Arthur Friedenreic (Brasil)
+Maradona (Argentina)
+Pelé (Brasil)
+El Chunche (Deporái)
+
+single_choice
+El puente más alto del mundo, de 402 metros, es
+4
+Puente Sutong en China
+Golden Gate en Estados Unidos
+Puente sobre el Río Virilla, Costa Rica
+Puente Baluarte en México
+
+single_choice
+El primer sistema operativo de la historia de la informática fue creado por
+4
+Microsoft
+IBM
+Apple
+General Motors
+DARPA
+American Airlines
+
+textual
+Antónimo de: antónimo
+sinónimo
+
+textual
+Cuál fue la primera compañía en implementar el concepto de ventanas (windows)
+Xerox
+
+single_choice
+Según Galileo Galilei el movimiento natural de los cuerpos es:
+2
+Uniformemente acelerado
+Rectilíneo uniforme
+Elíptico
+Ondulatorio
