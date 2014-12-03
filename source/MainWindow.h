@@ -2,7 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QGraphicsScene>
 
+class TriviaGame;
 namespace Ui { class MainWindow; }
 
 /**
@@ -14,17 +16,20 @@ class MainWindow : public QMainWindow
 
   protected: // Data members
 	/** Points to an instance of the MainWindow design created by QtDesigner **/
-	Ui::MainWindow *ui;
+	Ui::MainWindow* ui;
+	QGraphicsScene scene;
+	TriviaGame* triviaGame;
 
   public: // Public methods
 	/** Constructor **/
-	explicit MainWindow(QWidget* parent = 0);
+	explicit MainWindow(TriviaGame* triviaGame, QWidget* parent = 0);
 	/** Destructor **/
 	virtual ~MainWindow();
 
   protected: // Utility methods
 	/** Set up connections that QtDesigner is unable to create **/
 	void setupConnections();
+	void displayNextQuestion();
 
   protected slots:
 	/** Called when user asks for a new Trivia game **/

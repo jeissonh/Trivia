@@ -2,9 +2,15 @@
 #define QUESTION_H
 
 #include <QTextStream>
+#include <QGraphicsRectItem>
+
+class GraphicsQuestionItem;
 
 class Question
 {
+	Q_DISABLE_COPY(Question)
+	friend class GraphicsQuestionItem;
+
   protected:
 	QString text;
 	QString answer;
@@ -23,6 +29,17 @@ class Question
 
 	/// @return true if player gets the right answer
 	virtual bool ask() = 0; // pure virtual method
+	virtual GraphicsQuestionItem* buildGraphicsQuestionItem() = 0;
+};
+
+class GraphicsQuestionItem : public QGraphicsRectItem
+{
+  protected:
+	Question* question;
+
+  public:
+	explicit GraphicsQuestionItem(Question* question) : question(question) { }
+	virtual ~GraphicsQuestionItem() { /* this object does not own question, do not delete it */ }
 };
 
 #endif // QUESTION_H

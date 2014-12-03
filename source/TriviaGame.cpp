@@ -4,6 +4,8 @@
 #include <QDebug>
 #include <QFile>
 #include <QTextStream>
+#include <cstdlib>
+#include <ctime>
 
 TriviaGame::TriviaGame(int& argc, char* argv[])
 	: QApplication(argc, argv)
@@ -30,6 +32,12 @@ int TriviaGame::run()
 	return 1;
 }
 
+Question* TriviaGame::getRandomQuestion()
+{
+	int index = rand() % questions.size();
+	return questions[index];
+}
+
 bool TriviaGame::loadQuestions()
 {
 	// Open trivia3.txt located in assets.qrc
@@ -53,7 +61,6 @@ bool TriviaGame::loadQuestions()
 	}
 
 	file.close();
-	printQuestions();
 	return true;
 }
 
@@ -65,18 +72,9 @@ bool TriviaGame::analyzeArguments(int /*argc*/, char* /*argv*/[])
 int TriviaGame::play()
 {
 	Q_ASSERT(mainWindow == nullptr);
-	mainWindow = new MainWindow();
+	mainWindow = new MainWindow(this);
 	mainWindow->show();
-#if 0
 	std::srand( std::time(nullptr) );
-	size_t questionNumber = 0;
-	while ( std::cin )
-	{
-		std::cout << std::endl << ++questionNumber << ". ";
-		size_t index = rand() % questions.size();
-		questions[index]->ask();
-	}
-#endif
 	return exec();
 }
 

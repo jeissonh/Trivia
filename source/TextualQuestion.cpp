@@ -20,3 +20,8 @@ bool TextualQuestion::ask()
 		cout << "The right answer is: " << answer << endl;
 	return correct;
 }
+
+GraphicsQuestionItem* TextualQuestion::buildGraphicsQuestionItem()
+{
+	return new GraphicsTextualQuestionItem(this);
+}

@@ -8,7 +8,7 @@
 class MainWindow;
 class Question;
 
-class TriviaGame : public QApplication
+class TriviaGame : public virtual QApplication
 {
   protected:
 	MainWindow* mainWindow;
@@ -19,6 +19,7 @@ class TriviaGame : public QApplication
 	TriviaGame(int& argc, char* argv[]);
 	virtual ~TriviaGame();
 	int run();
+	Question* getRandomQuestion();
 
   private:
 	bool loadQuestions();

@@ -65,7 +65,7 @@
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionNew">
    <property name="icon">
-    <iconset resource="assets/assets.qrc">
+    <iconset resource="../assets/assets.qrc">
      <normaloff>:/common/new.svg</normaloff>:/common/new.svg</iconset>
    </property>
    <property name="text">
@@ -80,7 +80,7 @@
   </action>
   <action name="actionExit">
    <property name="icon">
-    <iconset resource="assets/assets.qrc">
+    <iconset resource="../assets/assets.qrc">
      <normaloff>:/common/exit.svg</normaloff>:/common/exit.svg</iconset>
    </property>
    <property name="text">
@@ -93,7 +93,7 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
-  <include location="assets/assets.qrc"/>
+  <include location="../assets/assets.qrc"/>
  </resources>
  <connections>
   <connection>

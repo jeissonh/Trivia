@@ -20,3 +20,8 @@ bool NumericQuestion::ask()
 		cout << "The right answer is: " << answer << endl;
 	return correct;
 }
+
+GraphicsQuestionItem* NumericQuestion::buildGraphicsQuestionItem()
+{
+	return new GraphicsNumericQuestionItem(this);
+}

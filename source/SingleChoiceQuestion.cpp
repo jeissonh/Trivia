@@ -35,3 +35,8 @@ bool SingleChoiceQuestion::ask()
 		cout << "The right answer is: " << answer << endl;
 	return correct;
 }
+
+GraphicsQuestionItem* SingleChoiceQuestion::buildGraphicsQuestionItem()
+{
+	return new GraphicsSingleChoiceQuestionItem(this);
+}
